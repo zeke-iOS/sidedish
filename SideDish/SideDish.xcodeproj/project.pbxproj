@@ -21,6 +21,8 @@
 		10B9F8A626311DF800B3130D /* CardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9F8A526311DF800B3130D /* CardAPI.swift */; };
 		10B9F8B02631536400B3130D /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1086ED2B262FF720004B8D42 /* NotoSansKR-Bold.otf */; };
 		10B9F8B42631536700B3130D /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1086ED2A262FF720004B8D42 /* NotoSansKR-Regular.otf */; };
+		B31E5EBD262E7551002046CC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E5EBC262E7551002046CC /* LoginViewController.swift */; };
+		B31E5EC3262E7E18002046CC /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = B31E5EC2262E7E18002046CC /* OctoKit */; };
 		B3D25402262D6AC900F57C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D25401262D6AC900F57C61 /* AppDelegate.swift */; };
 		B3D25404262D6AC900F57C61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D25403262D6AC900F57C61 /* SceneDelegate.swift */; };
 		B3D25406262D6AC900F57C61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D25405262D6AC900F57C61 /* ViewController.swift */; };
@@ -64,6 +66,7 @@
 		1086ED2A262FF720004B8D42 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		1086ED2B262FF720004B8D42 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		10B9F8A526311DF800B3130D /* CardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPI.swift; sourceTree = "<group>"; };
+		B31E5EBC262E7551002046CC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3D253FE262D6AC900F57C61 /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D25401262D6AC900F57C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3D25403262D6AC900F57C61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31E5EC3262E7E18002046CC /* OctoKit in Frameworks */,
 				1050395B262DAAA000C8C0FB /* Toaster in Frameworks */,
 				104183A5262EB35A00280647 /* Alamofire in Frameworks */,
 			);
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				B3D25405262D6AC900F57C61 /* ViewController.swift */,
+				B31E5EBC262E7551002046CC /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			packageProductDependencies = (
 				1050395A262DAAA000C8C0FB /* Toaster */,
 				104183A4262EB35A00280647 /* Alamofire */,
+				B31E5EC2262E7E18002046CC /* OctoKit */,
 			);
 			productName = SideDish;
 			productReference = B3D253FE262D6AC900F57C61 /* SideDish.app */;
@@ -327,6 +333,7 @@
 			packageReferences = (
 				10503959262DAAA000C8C0FB /* XCRemoteSwiftPackageReference "Toaster" */,
 				104183A3262EB35A00280647 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B31E5EC1262E7E18002046CC /* XCRemoteSwiftPackageReference "octokit" */,
 			);
 			productRefGroup = B3D253FF262D6AC900F57C61 /* Products */;
 			projectDirPath = "";
@@ -379,6 +386,7 @@
 				10418385262EA17300280647 /* Section.swift in Sources */,
 				10B9F8A626311DF800B3130D /* CardAPI.swift in Sources */,
 				1041837D262E9F3B00280647 /* ImageView+load.swift in Sources */,
+				B31E5EBD262E7551002046CC /* LoginViewController.swift in Sources */,
 				B3D25439262D6ECA00F57C61 /* CardCell.swift in Sources */,
 				10503968262DAB9300C8C0FB /* SectionHeaderReusableView.swift in Sources */,
 				10418397262EB1B700280647 /* Response.swift in Sources */,
@@ -739,6 +747,14 @@
 				kind = branch;
 			};
 		};
+		B31E5EC1262E7E18002046CC /* XCRemoteSwiftPackageReference "octokit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nerdishbynature/octokit.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -751,6 +767,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10503959262DAAA000C8C0FB /* XCRemoteSwiftPackageReference "Toaster" */;
 			productName = Toaster;
+		};
+		B31E5EC2262E7E18002046CC /* OctoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B31E5EC1262E7E18002046CC /* XCRemoteSwiftPackageReference "octokit" */;
+			productName = OctoKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

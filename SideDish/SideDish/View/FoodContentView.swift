@@ -28,7 +28,7 @@ class FoodContentView: UIView {
     }()
     var detail : UILabel = {
         let label = UILabel()
-        label.text = "아무거나 먹어"
+        label.text = "맛있는거 먹쟈"
         label.textColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
         label.font = UIFont(name: "NotoSansKR-Regular", size: 14)
         return label
@@ -55,7 +55,6 @@ class FoodContentView: UIView {
         stack.distribution = .fillProportionally
         return stack
     }()
-    var badgeStack = BadgeStack()
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -65,6 +64,34 @@ class FoodContentView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureView()
+    }
+    func setText(with card : Card?){
+        guard let card = card else { return }
+        
+        self.title.text = card.title
+        self.detail.text = card.detail
+        self.discountPrice.text = card.discountPrice?.description
+        self.originalPrice.attributedText = NSMutableAttributedString(
+            string: card.originalPrice?.description ?? "",
+            attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue])
+        
+        guard let badges = card.badge else {
+            return
+        }
+        setBadge(with : badges)
+    }
+    func setBadge(with badges : [String]) {
+        
+        let badgeViews = Badge.getViews(with: badges)
+        let badgeStack = UIStackView(arrangedSubviews:badgeViews)
+        self.stack.addArrangedSubview(badgeStack)
+        
+        var width : CGFloat = 0
+        for view in badgeViews {
+            width += view.frame.width
+        }
+        badgeStack.widthAnchor.constraint(equalToConstant: width).isActive = true
+        badgeStack.heightAnchor.constraint(equalToConstant: 25).isActive  = true
     }
     func configureMainStackView(){
         self.addSubview(stack)
@@ -83,22 +110,6 @@ class FoodContentView: UIView {
         priceStack.addArrangedSubview(discountPrice)
         priceStack.addArrangedSubview(originalPrice)
         stack.addArrangedSubview(priceStack)
-        stack.addArrangedSubview(badgeStack)
-    }
-    func setText(with card : Card?){
-        guard let card = card else { return }
-        
-        self.title.text = card.title
-        self.detail.text = card.detail
-        self.discountPrice.text = card.discountPrice?.description
-        self.originalPrice.attributedText = NSMutableAttributedString(
-            string: card.originalPrice?.description ?? "",
-            attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue])
-        
-        guard let badges = card.badge else {
-            badgeStack.isHidden = true
-            return
-        }
-        self.badgeStack.addBadges(with: badges)
+
     }
 }

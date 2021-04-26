@@ -17,27 +17,11 @@ class CardCell: UICollectionViewCell {
     @IBOutlet weak var originalPrice: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var badgeView: UIStackView!
+    @IBOutlet weak var badgeStack: UIStackView!
     
     var card : Card? {
         didSet {
-            thumbnail.load(url: card?.imageURL, completion: {
-                self.activityIndicator.stopAnimating()
-            })
-            title.text = card?.title
-            detail.text = card?.detail
-            discountPrice.text = card?.discountPrice?.description
-            originalPrice.attributedText = NSMutableAttributedString(string: card?.originalPrice?.description ?? "",
-                                                                          attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue])
-            guard let badges = card?.badge else {
-                badgeView.isHidden = true
-                return
-            }
-            
-            badges.forEach{ badge in
-                let view = makeBadge(with: badge)
-                self.badgeView.addArrangedSubview(view)
-            }
+            setCardData()
         }
     }
     override func awakeFromNib() {
@@ -47,29 +31,33 @@ class CardCell: UICollectionViewCell {
         configureTitle()
         configureDetail()
         configureThumbnail()
-        configureBadgeView()
+        configureBadgeStack()
+    }
+    func setCardData(){
+        thumbnail.load(url: card?.imageURL, completion: {
+            self.activityIndicator.stopAnimating()
+        })
+        title.text = card?.title
+        detail.text = card?.detail
+        discountPrice.text = card?.discountPrice?.description
+        originalPrice.attributedText = NSMutableAttributedString(string: card?.originalPrice?.description ?? "",
+                                                                      attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue])
+        guard let badges = card?.badge else {
+            badgeStack.isHidden = true
+            return
+        }
+        badges.forEach{ badge in
+            let view = makeBadge(with: badge)
+            self.badgeStack.addArrangedSubview(view)
+        }
     }
     func makeBadge(with name: String) -> UIView {
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 72, height: 25))
-        
-        view.backgroundColor = .white
-        view.layer.backgroundColor = #colorLiteral(red: 0.5095996261, green: 0.8290402293, blue: 0.1742436588, alpha: 1)
-        view.layer.cornerRadius = 5
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 56, height: 17))
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont(name: "NotoSansKR-Bold", size: 12)
-        label.text = name
-        
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.widthAnchor.constraint(equalToConstant: 56).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 17).isActive = true
-        label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 4).isActive = true
-     
-        return view
+        switch name {
+        case "이벤트특가" : return BadgeView().eventBadge(name)
+        case "론칭특가" : return BadgeView().lunchingBadge(name)
+        default:
+            return UIView()
+        }
     }
     func configureTitle(){
         self.title.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
@@ -91,7 +79,9 @@ class CardCell: UICollectionViewCell {
     func configureThumbnail(){
         self.thumbnail.layer.cornerRadius = 5
     }
-    func configureBadgeView(){
-        self.badgeView.translatesAutoresizingMaskIntoConstraints = false
+    func configureBadgeStack(){
+        self.badgeStack.translatesAutoresizingMaskIntoConstraints = false
+        self.badgeStack.distribution = .fillProportionally
+        self.badgeStack.alignment = .fill
     }
 }

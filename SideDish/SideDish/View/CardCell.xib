@@ -24,14 +24,17 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6BY-Vc-iEt">
                         <rect key="frame" x="138" y="12.5" width="205" height="105"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-3J-OyB">
-                                <rect key="frame" x="0.0" y="0.0" width="31" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-3J-OyB">
+                                <rect key="frame" x="0.0" y="0.0" width="205" height="23.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="517-7l-FOq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4y-rv-dzw">
-                                <rect key="frame" x="0.0" y="27.5" width="36" height="23"/>
+                                <rect key="frame" x="0.0" y="27.5" width="205" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,8 +62,15 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="267-PC-Uya" secondAttribute="bottom" id="1sq-70-vRm"/>
+                            <constraint firstItem="k4y-rv-dzw" firstAttribute="leading" secondItem="6BY-Vc-iEt" secondAttribute="leading" id="3Ce-KB-yop"/>
+                            <constraint firstAttribute="trailing" secondItem="k4y-rv-dzw" secondAttribute="trailing" id="Qgw-It-s5x"/>
+                            <constraint firstItem="k4y-rv-dzw" firstAttribute="top" secondItem="bfv-3J-OyB" secondAttribute="bottom" constant="4" id="QqP-mF-P9S"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="267-PC-Uya" secondAttribute="trailing" id="Quh-AL-1tP"/>
+                            <constraint firstItem="fly-gt-OH7" firstAttribute="top" secondItem="k4y-rv-dzw" secondAttribute="bottom" constant="4" id="Zd2-zy-ivS"/>
+                            <constraint firstItem="bfv-3J-OyB" firstAttribute="leading" secondItem="6BY-Vc-iEt" secondAttribute="leading" id="rIy-7P-cEJ"/>
+                            <constraint firstAttribute="trailing" secondItem="bfv-3J-OyB" secondAttribute="trailing" id="tEg-Ag-4a8"/>
+                            <constraint firstItem="bfv-3J-OyB" firstAttribute="top" secondItem="6BY-Vc-iEt" secondAttribute="top" id="tVb-Xx-A2J"/>
                             <constraint firstItem="267-PC-Uya" firstAttribute="leading" secondItem="6BY-Vc-iEt" secondAttribute="leading" id="wkU-Nr-lMD"/>
-                            <constraint firstAttribute="trailing" secondItem="267-PC-Uya" secondAttribute="trailing" id="zqi-Sw-DUZ"/>
                         </constraints>
                     </stackView>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Cfk-CO-HBW">
@@ -83,7 +93,7 @@
             </constraints>
             <connections>
                 <outlet property="activityIndicator" destination="Cfk-CO-HBW" id="gn4-0v-iWK"/>
-                <outlet property="badgeView" destination="267-PC-Uya" id="OMG-o7-wYM"/>
+                <outlet property="badgeStack" destination="267-PC-Uya" id="OMG-o7-wYM"/>
                 <outlet property="detail" destination="k4y-rv-dzw" id="MyQ-iy-Tjn"/>
                 <outlet property="discountPrice" destination="JMH-9Q-cu7" id="iIB-Bp-pa0"/>
                 <outlet property="originalPrice" destination="kUb-W7-KtP" id="HWn-nP-KZ9"/>

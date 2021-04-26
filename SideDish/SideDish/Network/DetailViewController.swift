@@ -29,6 +29,19 @@ class DetailViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] string in
                 self?.testLabel.text = string?.productDesciption
+                self?.fetchThumbnailImage(string: string?.thumbImage ?? [])
             }.store(in: &cancellables)
+    }
+    
+    func fetchThumbnailImage(string: [String]) {
+        string.enumerated().forEach { (index, string) in
+            let url = URL(string: string)
+            let imageView = UIImageView()
+            let xPos = self.view.frame.width * CGFloat(index)
+            imageView.frame = CGRect(x: xPos, y: 0, width: thumbnailImages.bounds.width, height: thumbnailImages.bounds.height)
+            imageView.load(url: url) {}
+            thumbnailImages.addSubview(imageView)
+            thumbnailImages.contentSize.width = imageView.frame.width * CGFloat(index+1)
+        }
     }
 }

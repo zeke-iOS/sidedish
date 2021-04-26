@@ -28,8 +28,11 @@ class ViewController: UIViewController {
         registerNIB()
         fetchData()
         makeSectionHeader()
+        cardCollectionView.delegate = self
+//        cardCollectionView.allowsSelection = true
     }
 }
+
 // MARK: - Functions
 extension ViewController {
     func makeDataSource() -> DataSource {
@@ -85,5 +88,18 @@ extension ViewController {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 343, height: 130)
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = self.storyboard?.instantiateViewController(identifier: "Detail") as! DetailViewController
+        let card = sections[indexPath.section].cards[indexPath.row]
+        detailVC.card = card
+        
+        
+        detailVC.modalTransitionStyle = .coverVertical
+        detailVC.modalPresentationStyle = .fullScreen
+        self.present(detailVC, animated: true, completion: nil)
     }
 }

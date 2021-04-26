@@ -24,7 +24,7 @@ class API {
             .publishData(emptyResponseCodes: [200, 204, 205])
             .tryMap { result -> API.Response<T> in
                 // TODO: Error Handling
-                
+                debugPrint(request)
                 if let data = result.data {
                     // 응답이 성공이고 result가 있을 때
                     let value = try decoder.decode(T.self, from: data)

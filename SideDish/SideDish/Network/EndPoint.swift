@@ -15,4 +15,7 @@ enum EndPoint : String, CodingKey {
     static let baseURL = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/"
     var path : String { self.stringValue }
     var url : URL { URL(string: EndPoint.baseURL + path)! }
+    static func detailURL(id: String) -> URL? {
+        return URL(string: EndPoint.baseURL + "detail" + "/\(id)")
+    }
 }

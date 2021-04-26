@@ -54,3 +54,41 @@ struct CardsResponse : Codable {
         return card
     }
 }
+
+struct DetailResponse: Codable {
+    let id: String
+    let data: DetailImages
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "hash"
+        case data
+    }
+
+    func responseToCardDetail() -> CardDetail {
+        let cardDetail = CardDetail(topImage: data.topImage, thumbImage: data.thumbImages, productDesciption: data.productDescription, point: data.point, deliveryInfo: data.deliveryInfo, deliveryFee: data.deliveryFee, prices: data.prices, detailSection: data.detailSection)
+        return cardDetail
+    }
+    
+}
+
+struct DetailImages: Codable {
+    let topImage: String
+    let thumbImages: [String]
+    let productDescription: String
+    let point: String
+    let deliveryInfo: String
+    let deliveryFee: String
+    let prices: [String]
+    let detailSection: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case topImage = "top_image"
+        case thumbImages = "thumb_images"
+        case productDescription = "product_description"
+        case point
+        case deliveryInfo = "delivery_info"
+        case deliveryFee = "delivery_fee"
+        case prices
+        case detailSection = "detail_section"
+    }
+}

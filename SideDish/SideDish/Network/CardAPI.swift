@@ -18,3 +18,10 @@ class CardAPI {
             .eraseToAnyPublisher()
     }
 }
+
+class DetailAPI {
+    static func loadDetail(id: String) -> AnyPublisher<DetailResponse, APIError> {
+        let request = AF.request(EndPoint.detailURL(id: id)!, method: .get)
+        return API().run(request).map(\.value).eraseToAnyPublisher()
+    }
+}

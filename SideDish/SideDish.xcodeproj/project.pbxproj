@@ -19,6 +19,7 @@
 		105467172631101600DAB4E3 /* LoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105467162631101600DAB4E3 /* LoadError.swift */; };
 		1054672426311A6900DAB4E3 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054672326311A6900DAB4E3 /* APITest.swift */; };
 		1083BDB52636A0C300B7C840 /* FoodContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083BDB42636A0C300B7C840 /* FoodContentView.swift */; };
+		1083BDC82636B45C00B7C840 /* BadgeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083BDC72636B45C00B7C840 /* BadgeStack.swift */; };
 		10B9F8A626311DF800B3130D /* CardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9F8A526311DF800B3130D /* CardAPI.swift */; };
 		10B9F8B02631536400B3130D /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1086ED2B262FF720004B8D42 /* NotoSansKR-Bold.otf */; };
 		10B9F8B42631536700B3130D /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1086ED2A262FF720004B8D42 /* NotoSansKR-Regular.otf */; };
@@ -68,6 +69,7 @@
 		105467162631101600DAB4E3 /* LoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadError.swift; sourceTree = "<group>"; };
 		1054672326311A6900DAB4E3 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 		1083BDB42636A0C300B7C840 /* FoodContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodContentView.swift; sourceTree = "<group>"; };
+		1083BDC72636B45C00B7C840 /* BadgeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStack.swift; sourceTree = "<group>"; };
 		1086ED2A262FF720004B8D42 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		1086ED2B262FF720004B8D42 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		10B9F8A526311DF800B3130D /* CardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPI.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				B3D25438262D6ECA00F57C61 /* CardCell.xib */,
 				10503967262DAB9300C8C0FB /* SectionHeaderReusableView.swift */,
 				1083BDB42636A0C300B7C840 /* FoodContentView.swift */,
+				1083BDC72636B45C00B7C840 /* BadgeStack.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				10418377262E9B9B00280647 /* Card.swift in Sources */,
 				B3D25406262D6AC900F57C61 /* ViewController.swift in Sources */,
 				B3D25402262D6AC900F57C61 /* AppDelegate.swift in Sources */,
+				1083BDC82636B45C00B7C840 /* BadgeStack.swift in Sources */,
 				B3D2540C262D6AC900F57C61 /* SideDish.xcdatamodeld in Sources */,
 				104BDDD926315DF300F35BE7 /* EndPoint.swift in Sources */,
 				B3D25404262D6AC900F57C61 /* SceneDelegate.swift in Sources */,

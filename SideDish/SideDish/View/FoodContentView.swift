@@ -10,9 +10,12 @@ import UIKit
 @IBDesignable
 class FoodContentView: UIView {
     var stack : UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        return stackView
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 8
+        stack.alignment = .leading
+        stack.distribution = .fillProportionally
+        return stack
     }()
     var title : UILabel = {
         let label = UILabel()
@@ -20,7 +23,7 @@ class FoodContentView: UIView {
         label.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         label.font = UIFont(name: "NotoSansKR-Bold", size: 16)
         label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
+        label.lineBreakMode = .byCharWrapping
         return label
     }()
     var detail : UILabel = {
@@ -44,11 +47,15 @@ class FoodContentView: UIView {
         label.font = UIFont(name: "NotoSansKR-Bold", size: 14)
         return label
     }()
-    var badgeView : UIStackView = {
+    var priceStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
+        stack.spacing = 4
+        stack.alignment = .leading
+        stack.distribution = .fillProportionally
         return stack
     }()
+    var badgeStack = BadgeStack()
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -59,30 +66,24 @@ class FoodContentView: UIView {
         super.init(coder: coder)
         configureView()
     }
-    func configureView(){
+    func configureMainStackView(){
         self.addSubview(stack)
-        
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.alignment = .leading
-        stack.distribution = .fill
+
         stack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
         stack.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         stack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
         stack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
+    }
+    func configureView(){
+        configureMainStackView()
         
-        self.stack.addArrangedSubview(title)
-        self.stack.addArrangedSubview(detail)
-        
-        let priceStack = UIStackView()
-        priceStack.axis = .horizontal
-        priceStack.spacing = 4
-        priceStack.alignment = .fill
-        priceStack.distribution = .fillProportionally
+        stack.addArrangedSubview(title)
+        stack.addArrangedSubview(detail)
         priceStack.addArrangedSubview(discountPrice)
         priceStack.addArrangedSubview(originalPrice)
-        
-        self.stack.addArrangedSubview(priceStack)
-        self.stack.addArrangedSubview(badgeView)
+        stack.addArrangedSubview(priceStack)
+        stack.addArrangedSubview(badgeStack)
     }
     func setText(with card : Card?){
         guard let card = card else { return }
@@ -93,35 +94,11 @@ class FoodContentView: UIView {
         self.originalPrice.attributedText = NSMutableAttributedString(
             string: card.originalPrice?.description ?? "",
             attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue])
+        
         guard let badges = card.badge else {
-            badgeView.isHidden = true
+            badgeStack.isHidden = true
             return
         }
-        badges.forEach{ badge in
-            let view = makeBadge(with: badge)
-            self.badgeView.addArrangedSubview(view)
-        }
-    }
-    func makeBadge(with name: String) -> UIView {
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 72, height: 25))
-        
-        view.backgroundColor = .white
-        view.layer.backgroundColor = #colorLiteral(red: 0.5095996261, green: 0.8290402293, blue: 0.1742436588, alpha: 1)
-        view.layer.cornerRadius = 5
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 56, height: 17))
-        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont(name: "NotoSansKR-Bold", size: 12)
-        label.text = name
-        
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.widthAnchor.constraint(equalToConstant: 56).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 17).isActive = true
-        label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 4).isActive = true
-     
-        return view
+        self.badgeStack.addBadges(with: badges)
     }
 }

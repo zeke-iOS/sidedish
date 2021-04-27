@@ -99,7 +99,6 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kje-ch-wcT">
                                                         <rect key="frame" x="0.0" y="0.0" width="1656" height="414"/>
-                                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="1656" id="c5E-8p-Frw"/>
                                                         </constraints>
@@ -116,7 +115,7 @@
                                                 <viewLayoutGuide key="contentLayoutGuide" id="3xW-UX-xVB"/>
                                                 <viewLayoutGuide key="frameLayoutGuide" id="OHK-rX-Rlp"/>
                                             </scrollView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="200" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="6fr-q9-sMl">
+                                            <stackView opaque="NO" contentMode="top" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="200" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="6fr-q9-sMl">
                                                 <rect key="frame" x="10" y="474" width="394" height="200"/>
                                             </stackView>
                                         </subviews>
@@ -193,9 +192,6 @@
         <image name="gh-login-button" width="735" height="130"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -17,7 +17,6 @@ class LoginViewController: UIViewController, ASWebAuthenticationPresentationCont
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {

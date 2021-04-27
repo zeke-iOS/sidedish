@@ -50,11 +50,14 @@ class DetailViewController: UIViewController {
         string.enumerated().forEach{ (index, string) in
             let url = URL(string: string)
             let imageView = UIImageView()
-            imageView.contentMode = .scaleAspectFit
+            
             imageView.load(url: url){}
-            imageView.frame.size = CGSize(width: 100, height: 100)
+            
+            imageView.contentMode = .scaleAspectFit
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1).isActive = true
             self.foodImages.addArrangedSubview(imageView)
             foodInformation.contentSize.height = thumbnailImages.frame.height + (imageView.frame.width * CGFloat(index+1))
+            
         }
     }
 }

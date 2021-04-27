@@ -15,6 +15,7 @@ extension UIImageView {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
+                        print("이미지 높이: ", image.size.height)
                         completion()
                     }
                 }

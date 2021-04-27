@@ -93,7 +93,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailVC = self.storyboard?.instantiateViewController(identifier: "Detail") as! DetailViewController
+        guard let detailVC = self.storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController else { return }
         let card = sections[indexPath.section].cards[indexPath.row]
         detailVC.card = card
         

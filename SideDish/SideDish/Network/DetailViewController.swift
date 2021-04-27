@@ -28,10 +28,7 @@ class DetailViewController: UIViewController {
         detailManager.$cardDetail
             .receive(on: DispatchQueue.main)
             .sink { [weak self] detail in
-                self?.foodContentView.title.text = card.title
-                self?.foodContentView.detail.text = detail?.productDesciption
-                self?.foodContentView.originalPrice.text = detail?.prices[1]
-                self?.foodContentView.discountPrice.text = detail?.prices[0]
+                self?.foodContentView.setText(with: card)
             }.store(in: &cancellables)
     }
 }

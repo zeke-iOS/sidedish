@@ -31,4 +31,8 @@ class CardCell: UICollectionViewCell {
     func configureThumbnail(){
         self.thumbnail.layer.cornerRadius = 5
     }
+    
+    override func prepareForReuse() {
+        <#code#>
+    }
 }

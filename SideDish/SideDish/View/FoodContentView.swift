@@ -56,6 +56,36 @@ class FoodContentView: UIView {
         stack.distribution = .fillProportionally
         return stack
     }()
+    private var eventBadge : UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        label.font = UIFont(name: "NotoSansKR-Bold", size: 12)
+        label.textAlignment = .center
+        label.text = "이벤트특가"
+        label.layer.cornerRadius = 5
+        label.layer.backgroundColor = #colorLiteral(red: 0.5095996261, green: 0.8290402293, blue: 0.1742436588, alpha: 1)
+        
+        label.widthAnchor.constraint(equalToConstant: 72).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        label.isHidden = true
+        return label
+    }()
+    
+    private var lunchingBadge : UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        label.font = UIFont(name: "NotoSansKR-Bold", size: 12)
+        label.textAlignment = .center
+        label.text = "론칭특가"
+        label.layer.cornerRadius = 5
+        label.layer.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        
+        label.widthAnchor.constraint(equalToConstant: 61).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        label.isHidden = true
+        return label
+    }()
+    
     private var badgeStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -84,12 +114,26 @@ class FoodContentView: UIView {
             string: card.originalPrice?.description ?? "",
             attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue])
         
-        guard let badges = card.badge else {
+        if card.badge == nil {
             badgeStack.isHidden = true
-            return
         }
-        badgeStack.isHidden = false
-        setBadge(with : badges)
+        card.badge?.forEach{ badge in
+            switch badge {
+            case "이벤트특가":
+                self.eventBadge.isHidden = false
+            case "론칭특가":
+                self.lunchingBadge.isHidden = false
+            default:
+                break
+            }
+        }
+        
+//        guard let badges = card.badge else {
+//            badgeStack.isHidden = true
+//            return
+//        }
+//        badgeStack.isHidden = false
+//        setBadge(with : badges)
     }
     private func setBadge(with badges : [String]) {
 //        self.badgeStack.removeAllArrangedSubviews()
@@ -118,6 +162,8 @@ class FoodContentView: UIView {
         priceStack.addArrangedSubview(discountPrice)
         priceStack.addArrangedSubview(originalPrice)
         mainStack.addArrangedSubview(priceStack)
+        badgeStack.addArrangedSubview(eventBadge)
+        badgeStack.addArrangedSubview(lunchingBadge)
         mainStack.addArrangedSubview(badgeStack)
     }
 }

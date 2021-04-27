@@ -11,11 +11,19 @@ extension UIImageView {
     func load(url: URL?, completion : @escaping () -> ()) {
         guard let url = url else { return }
         DispatchQueue.global().async { [weak self] in
+            let cacheKey = NSString(string: url.description)
+            if let cacheImage = ImageCacheManager.shared.object(forKey: cacheKey) {
+                DispatchQueue.main.async {
+                    self?.image = cacheImage
+                }
+                return
+            }
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
+                        print("\(url.description)로딩되었음")
                         self?.image = image
-                        print("이미지 높이: ", image.size.height)
+                        ImageCacheManager.shared.setObject(image, forKey: url.description as NSString)
                         completion()
                     }
                 }

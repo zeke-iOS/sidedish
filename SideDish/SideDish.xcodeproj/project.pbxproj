@@ -23,6 +23,7 @@
 		10B9F8B42631536700B3130D /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1086ED2A262FF720004B8D42 /* NotoSansKR-Regular.otf */; };
 		B31E5EBD262E7551002046CC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E5EBC262E7551002046CC /* LoginViewController.swift */; };
 		B31E5EC3262E7E18002046CC /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = B31E5EC2262E7E18002046CC /* OctoKit */; };
+		B37BF5922637E31E0046A168 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BF5912637E31E0046A168 /* ImageCacheManager.swift */; };
 		B3D25402262D6AC900F57C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D25401262D6AC900F57C61 /* AppDelegate.swift */; };
 		B3D25404262D6AC900F57C61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D25403262D6AC900F57C61 /* SceneDelegate.swift */; };
 		B3D25406262D6AC900F57C61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D25405262D6AC900F57C61 /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 		1086ED2B262FF720004B8D42 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		10B9F8A526311DF800B3130D /* CardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPI.swift; sourceTree = "<group>"; };
 		B31E5EBC262E7551002046CC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B37BF5912637E31E0046A168 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCacheManager.swift; path = SideDish/View/ImageCacheManager.swift; sourceTree = SOURCE_ROOT; };
 		B3D253FE262D6AC900F57C61 /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D25401262D6AC900F57C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3D25403262D6AC900F57C61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		108A8942262E761400C828AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B37BF5912637E31E0046A168 /* ImageCacheManager.swift */,
 				10418376262E9B9B00280647 /* Card.swift */,
 				10418384262EA17300280647 /* Section.swift */,
 				B3EA763626329041004296DF /* CardDetail.swift */,
@@ -404,6 +407,7 @@
 				10418397262EB1B700280647 /* Response.swift in Sources */,
 				10418377262E9B9B00280647 /* Card.swift in Sources */,
 				B3D25406262D6AC900F57C61 /* ViewController.swift in Sources */,
+				B37BF5922637E31E0046A168 /* ImageCacheManager.swift in Sources */,
 				B3D25402262D6AC900F57C61 /* AppDelegate.swift in Sources */,
 				B3D2540C262D6AC900F57C61 /* SideDish.xcdatamodeld in Sources */,
 				104BDDD926315DF300F35BE7 /* EndPoint.swift in Sources */,

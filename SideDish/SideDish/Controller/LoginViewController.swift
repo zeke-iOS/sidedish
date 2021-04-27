@@ -28,10 +28,8 @@ class LoginViewController: UIViewController, ASWebAuthenticationPresentationCont
             switch response {
             case .success(let user):
                 DispatchQueue.main.async {
-                    let home = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-                    home?.modalTransitionStyle = .flipHorizontal
-                    home?.modalPresentationStyle = .fullScreen
-                    self.present(home!, animated: true, completion: nil)
+                    guard let home = self.storyboard?.instantiateViewController(withIdentifier: "Home") as? ViewController else { return }
+                    self.navigationController?.pushViewController(home, animated: true)
                 }
             case .failure(let error):
               print(error)

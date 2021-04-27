@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         guard let card = card else { return }
         bind(id: card.id)
     }
@@ -59,5 +60,10 @@ class DetailViewController: UIViewController {
             foodInformation.contentSize.height = thumbnailImages.frame.height + (imageView.frame.width * CGFloat(index+1))
             
         }
+    }
+    
+    func configureNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
+        navigationItem.title = card?.title
     }
 }

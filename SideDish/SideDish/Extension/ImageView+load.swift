@@ -21,7 +21,6 @@ extension UIImageView {
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
-                        print("\(url.description)로딩되었음")
                         self?.image = image
                         ImageCacheManager.shared.setObject(image, forKey: url.description as NSString)
                         completion()

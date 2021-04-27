@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         fetchData()
         makeSectionHeader()
         cardCollectionView.delegate = self
+        self.navigationController?.navigationBar.isHidden = true
 //        cardCollectionView.allowsSelection = true
     }
 }
@@ -97,9 +98,6 @@ extension ViewController: UICollectionViewDelegate {
         let card = sections[indexPath.section].cards[indexPath.row]
         detailVC.card = card
         
-        
-        detailVC.modalTransitionStyle = .coverVertical
-        detailVC.modalPresentationStyle = .fullScreen
-        self.present(detailVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

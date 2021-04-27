@@ -9,9 +9,9 @@ import UIKit
 import Combine
 
 class DetailViewController: UIViewController {
-    
-    @IBOutlet weak var testLabel: UILabel!
+
     @IBOutlet weak var thumbnailImages: UIScrollView!
+    @IBOutlet weak var foodContentView: FoodContentView!
     
     var card: Card?
     var detailManager: CardDetailManager = CardDetailManager()
@@ -27,8 +27,10 @@ class DetailViewController: UIViewController {
         detailManager.fetchDetail(id: id)
         detailManager.$cardDetail
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] string in
-                self?.testLabel.text = string?.productDesciption
+            .sink { [weak self] detail in
+                self?.foodContentView.detail.text = detail?.productDesciption
+                self?.foodContentView.originalPrice.text = detail?.prices[1]
+                self?.foodContentView.discountPrice.text = detail?.prices[0]
             }.store(in: &cancellables)
     }
 }

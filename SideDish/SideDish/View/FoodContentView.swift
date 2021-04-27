@@ -9,12 +9,13 @@ import UIKit
 
 @IBDesignable
 class FoodContentView: UIView {
-    var stack : UIStackView = {
+
+    private var mainStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 8
         stack.alignment = .leading
-        stack.distribution = .fillProportionally
+        stack.distribution = .fillEqually
         return stack
     }()
     var title : UILabel = {
@@ -47,7 +48,15 @@ class FoodContentView: UIView {
         label.font = UIFont(name: "NotoSansKR-Bold", size: 14)
         return label
     }()
-    var priceStack : UIStackView = {
+    private var priceStack : UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 4
+        stack.alignment = .leading
+        stack.distribution = .fillProportionally
+        return stack
+    }()
+    private var badgeStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.spacing = 4
@@ -76,40 +85,39 @@ class FoodContentView: UIView {
             attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue])
         
         guard let badges = card.badge else {
+            badgeStack.isHidden = true
             return
         }
+        badgeStack.isHidden = false
         setBadge(with : badges)
     }
-    func setBadge(with badges : [String]) {
-        
-        let badgeViews = Badge.getViews(with: badges)
-        let badgeStack = UIStackView(arrangedSubviews:badgeViews)
-        self.stack.addArrangedSubview(badgeStack)
-        
-        var width : CGFloat = 0
-        for view in badgeViews {
-            width += view.frame.width
+    private func setBadge(with badges : [String]) {
+//        self.badgeStack.removeAllArrangedSubviews()
+        badges.forEach{ name in
+            switch name {
+            case "이벤트특가" : self.badgeStack.addArrangedSubview(BadgeLabel.eventBadge)
+            case "론칭특가" : self.badgeStack.addArrangedSubview(BadgeLabel.lunchingBadge)
+            default : break
+            }
         }
-        badgeStack.widthAnchor.constraint(equalToConstant: width).isActive = true
-        badgeStack.heightAnchor.constraint(equalToConstant: 25).isActive  = true
     }
-    func configureMainStackView(){
-        self.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
+    private func configureMainStackView(){
+        self.addSubview(mainStack)
+        mainStack.translatesAutoresizingMaskIntoConstraints = false
 
-        stack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-        stack.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        stack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        stack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        mainStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        mainStack.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        mainStack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        mainStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
-    func configureView(){
+    private func configureView(){
         configureMainStackView()
         
-        stack.addArrangedSubview(title)
-        stack.addArrangedSubview(detail)
+        mainStack.addArrangedSubview(title)
+        mainStack.addArrangedSubview(detail)
         priceStack.addArrangedSubview(discountPrice)
         priceStack.addArrangedSubview(originalPrice)
-        stack.addArrangedSubview(priceStack)
-
+        mainStack.addArrangedSubview(priceStack)
+        mainStack.addArrangedSubview(badgeStack)
     }
 }

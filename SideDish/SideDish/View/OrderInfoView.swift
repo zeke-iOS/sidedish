@@ -18,15 +18,17 @@ class OrderInfoView: UIView {
         return label
     }()
     private var totalLabel : UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 20))
+        let label = UILabel()
         label.text = "총 주문금액"
+        label.textAlignment = .right
         label.textColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
         label.font = UIFont(name: "NotoSansKR-Bold", size: 18)
         return label
     }()
     var total : UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 20))
+        let label = UILabel()
         label.text = "5,200원"
+        label.textAlignment = .right
         label.textColor = UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 1)
         label.font = UIFont(name: "NotoSansKR-Bold", size: 32)
         return label
@@ -50,10 +52,9 @@ class OrderInfoView: UIView {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.alignment = .fill
-        stack.distribution = .fill
+        stack.distribution = .fillEqually
         stack.layer.borderWidth = 1
         stack.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
-        stack.widthAnchor.constraint(equalToConstant: 90).isActive = true
         return stack
     }()
     private var totalStack : UIStackView = {
@@ -61,7 +62,7 @@ class OrderInfoView: UIView {
         stack.axis = .horizontal
         stack.spacing = 24
         stack.alignment = .center
-        stack.distribution = .fill
+        stack.distribution = .fillProportionally
         stack.heightAnchor.constraint(equalToConstant: 94).isActive = true
         return stack
     }()

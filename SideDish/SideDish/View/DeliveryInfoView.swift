@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class DeliveryInfoView: UIView {
 
     private var mainStack : UIStackView = {

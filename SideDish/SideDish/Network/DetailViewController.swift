@@ -24,8 +24,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        orderInfo.up.addTarget(self, action: #selector(onTapButtonWithUp), for: .touchUpInside)
-        orderInfo.down.addTarget(self, action: #selector(onTapButtonWithDown), for: .touchUpInside)
+        orderInfo.up.addTarget(self, action: #selector(increase), for: .touchUpInside)
+        orderInfo.down.addTarget(self, action: #selector(reduce), for: .touchUpInside)
+        orderInfo.orderButton.addTarget(self, action: #selector(order), for: .touchUpInside)
         guard let card = card else { return }
         bind(card: card)
     }
@@ -81,14 +82,14 @@ class DetailViewController: UIViewController {
     }
     
     @objc
-    func onTapButtonWithUp() {
+    func increase() {
         let totalPrice = card?.discountPrice?.filter{ $0.isNumber }
         orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! + 1)"
         orderInfo.total.text = "\(Int(totalPrice!)! * Int(orderInfo.amount.text!)!)원"
     }
     
     @objc
-    func onTapButtonWithDown() {
+    func reduce() {
         let totalPrice = card?.discountPrice?.filter{ $0.isNumber }
         if Int(orderInfo.amount.text!)! == 0 {
             return
@@ -96,6 +97,10 @@ class DetailViewController: UIViewController {
             orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! - 1)"
             orderInfo.total.text = "\(Int(totalPrice!)! * Int(orderInfo.amount.text!)!)원"
         }
+    }
+    
+    @objc
+    func order() {
         
     }
 }

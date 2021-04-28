@@ -39,17 +39,17 @@ struct OrderInfoComponent {
         label.font = UIFont(name: "NotoSansKR-Bold", size: 18)
         return label
     }()
-    static var orderButton : UIButton = {
-        let button = UIButton()
-        button.backgroundColor = #colorLiteral(red: 0.5095996261, green: 0.8290402293, blue: 0.1742436588, alpha: 1)
-        button.setTitle("주문하기", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        button.titleLabel?.textAlignment = .center
-        button.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 18)
-        button.layer.cornerRadius = 8
-        button.heightAnchor.constraint(equalToConstant: 58).isActive = true
-        return button
-    }()
+//    static var orderButton : UIButton = {
+//        let button = UIButton()
+//        button.backgroundColor = #colorLiteral(red: 0.5095996261, green: 0.8290402293, blue: 0.1742436588, alpha: 1)
+//        button.setTitle("주문하기", for: .normal)
+//        button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+//        button.titleLabel?.textAlignment = .center
+//        button.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 18)
+//        button.layer.cornerRadius = 8
+//        button.heightAnchor.constraint(equalToConstant: 58).isActive = true
+//        return button
+//    }()
 //    var innerButtonStack : UIStackView = {
 //        let stack = UIStackView()
 //        stack.axis = .vertical

@@ -10,18 +10,40 @@ import UIKit
 //@IBDesignable
 class OrderInfoView: UIView {
 
-    var amountLabel : UILabel = {
+    private var amountLabel : UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 20))
         label.text = "수량"
         label.textColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
         label.font = UIFont(name: "NotoSansKR-Regular", size: 14)
         return label
     }()
+    private var totalLabel : UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 20))
+        label.text = "총 주문금액"
+        label.textColor = UIColor(red: 0.51, green: 0.51, blue: 0.51, alpha: 1)
+        label.font = UIFont(name: "NotoSansKR-Bold", size: 18)
+        return label
+    }()
+    var total : UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 20))
+        label.text = "5,200원"
+        label.textColor = UIColor(red: 0.004, green: 0.004, blue: 0.004, alpha: 1)
+        label.font = UIFont(name: "NotoSansKR-Bold", size: 32)
+        return label
+    }()
+    private var mainStack : UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.alignment = .trailing
+        stack.distribution = .fillProportionally
+        return stack
+    }()
     private var amountStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill
+        stack.heightAnchor.constraint(equalToConstant: 89).isActive = true
         return stack
     }()
     private var innerStack : UIStackView = {
@@ -32,6 +54,14 @@ class OrderInfoView: UIView {
         stack.layer.borderWidth = 1
         stack.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         stack.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        return stack
+    }()
+    private var totalStack : UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 24
+        stack.alignment = .center
+        stack.distribution = .fillProportionally
         return stack
     }()
     private var buttonStack : UIStackView = {
@@ -89,17 +119,26 @@ class OrderInfoView: UIView {
 
         amountStack.addArrangedSubview(amountLabel)
         amountStack.addArrangedSubview(innerStack)
+        
         innerStack.addArrangedSubview(amount)
         innerStack.addArrangedSubview(buttonStack)
+        
         buttonStack.addArrangedSubview(up)
         buttonStack.addArrangedSubview(down)
         
-        self.addSubview(amountStack)
-        self.amountStack.translatesAutoresizingMaskIntoConstraints = false
-        amountStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-        amountStack.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor).isActive = true
-        amountStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        amountStack.heightAnchor.constraint(equalToConstant: 89).isActive = true
+        totalStack.addArrangedSubview(totalLabel)
+        totalStack.addArrangedSubview(total)
+        
+        mainStack.addArrangedSubview(amountStack)
+        mainStack.addArrangedSubview(totalStack)
+        
+        self.addSubview(mainStack)
+        
+        self.mainStack.translatesAutoresizingMaskIntoConstraints = false
+        mainStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        mainStack.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor).isActive = true
+        mainStack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        mainStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
 }

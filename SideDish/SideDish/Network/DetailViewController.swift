@@ -22,11 +22,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         guard let card = card else { return }
-        bind(id: card.id)
+        bind(card: card)
     }
     
-    func bind(id: String) {
-        detailManager.fetchDetail(id: id)
+    func bind(card: Card) {
+        detailManager.fetchDetail(id: card.id)
         detailManager.$cardDetail
             .receive(on: DispatchQueue.main)
             .sink { [weak self] cardDetail in

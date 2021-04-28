@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100207952636F15400DFAE3C /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100207942636F15400DFAE3C /* BadgeLabel.swift */; };
 		10418377262E9B9B00280647 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10418376262E9B9B00280647 /* Card.swift */; };
 		1041837D262E9F3B00280647 /* ImageView+load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041837C262E9F3B00280647 /* ImageView+load.swift */; };
 		10418385262EA17300280647 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10418384262EA17300280647 /* Section.swift */; };
 		10418397262EB1B700280647 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10418396262EB1B700280647 /* Response.swift */; };
 		1041839F262EB30800280647 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041839E262EB30800280647 /* API.swift */; };
 		104183A5262EB35A00280647 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 104183A4262EB35A00280647 /* Alamofire */; };
+		10459C1C26392C380065A4D6 /* DeliveryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */; };
+		10459C24263937D60065A4D6 /* OrderInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10459C23263937D60065A4D6 /* OrderInfoView.swift */; };
+		10459C31263956BF0065A4D6 /* OrderInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10459C30263956BF0065A4D6 /* OrderInfoComponent.swift */; };
+		104636772637E38100131B74 /* StackView+allremove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104636762637E38100131B74 /* StackView+allremove.swift */; };
 		104BDDD926315DF300F35BE7 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDDD826315DF300F35BE7 /* EndPoint.swift */; };
 		1050395B262DAAA000C8C0FB /* Toaster in Frameworks */ = {isa = PBXBuildFile; productRef = 1050395A262DAAA000C8C0FB /* Toaster */; };
 		10503968262DAB9300C8C0FB /* SectionHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10503967262DAB9300C8C0FB /* SectionHeaderReusableView.swift */; };
 		105467172631101600DAB4E3 /* LoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105467162631101600DAB4E3 /* LoadError.swift */; };
 		1054672426311A6900DAB4E3 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054672326311A6900DAB4E3 /* APITest.swift */; };
+		1083BDB52636A0C300B7C840 /* FoodContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083BDB42636A0C300B7C840 /* FoodContentView.swift */; };
 		10B9F8A626311DF800B3130D /* CardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9F8A526311DF800B3130D /* CardAPI.swift */; };
 		10B9F8B02631536400B3130D /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1086ED2B262FF720004B8D42 /* NotoSansKR-Bold.otf */; };
 		10B9F8B42631536700B3130D /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1086ED2A262FF720004B8D42 /* NotoSansKR-Regular.otf */; };
@@ -58,15 +64,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100207942636F15400DFAE3C /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		10418376262E9B9B00280647 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		1041837C262E9F3B00280647 /* ImageView+load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+load.swift"; sourceTree = "<group>"; };
 		10418384262EA17300280647 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		10418396262EB1B700280647 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		1041839E262EB30800280647 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoView.swift; sourceTree = "<group>"; };
+		10459C23263937D60065A4D6 /* OrderInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoView.swift; sourceTree = "<group>"; };
+		10459C30263956BF0065A4D6 /* OrderInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoComponent.swift; sourceTree = "<group>"; };
+		104636762637E38100131B74 /* StackView+allremove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+allremove.swift"; sourceTree = "<group>"; };
 		104BDDD826315DF300F35BE7 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		10503967262DAB9300C8C0FB /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
 		105467162631101600DAB4E3 /* LoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadError.swift; sourceTree = "<group>"; };
 		1054672326311A6900DAB4E3 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
+		1083BDB42636A0C300B7C840 /* FoodContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodContentView.swift; sourceTree = "<group>"; };
 		1086ED2A262FF720004B8D42 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		1086ED2B262FF720004B8D42 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		10B9F8A526311DF800B3130D /* CardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPI.swift; sourceTree = "<group>"; };
@@ -126,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				1041837C262E9F3B00280647 /* ImageView+load.swift */,
+				104636762637E38100131B74 /* StackView+allremove.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -228,6 +241,11 @@
 				B3D25437262D6ECA00F57C61 /* CardCell.swift */,
 				B3D25438262D6ECA00F57C61 /* CardCell.xib */,
 				10503967262DAB9300C8C0FB /* SectionHeaderReusableView.swift */,
+				1083BDB42636A0C300B7C840 /* FoodContentView.swift */,
+				100207942636F15400DFAE3C /* BadgeLabel.swift */,
+				10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */,
+				10459C23263937D60065A4D6 /* OrderInfoView.swift */,
+				10459C30263956BF0065A4D6 /* OrderInfoComponent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,13 +412,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				105467172631101600DAB4E3 /* LoadError.swift in Sources */,
+				10459C1C26392C380065A4D6 /* DeliveryInfoView.swift in Sources */,
 				1041839F262EB30800280647 /* API.swift in Sources */,
 				10418385262EA17300280647 /* Section.swift in Sources */,
 				B3EA763726329041004296DF /* CardDetail.swift in Sources */,
+				1083BDB52636A0C300B7C840 /* FoodContentView.swift in Sources */,
+				10459C31263956BF0065A4D6 /* OrderInfoComponent.swift in Sources */,
 				10B9F8A626311DF800B3130D /* CardAPI.swift in Sources */,
 				1041837D262E9F3B00280647 /* ImageView+load.swift in Sources */,
+				100207952636F15400DFAE3C /* BadgeLabel.swift in Sources */,
 				B31E5EBD262E7551002046CC /* LoginViewController.swift in Sources */,
 				B3D25439262D6ECA00F57C61 /* CardCell.swift in Sources */,
+				104636772637E38100131B74 /* StackView+allremove.swift in Sources */,
 				B3EA763F2632996E004296DF /* CardDetailManager.swift in Sources */,
 				B3EA762C26327634004296DF /* DetailViewController.swift in Sources */,
 				10503968262DAB9300C8C0FB /* SectionHeaderReusableView.swift in Sources */,
@@ -410,6 +433,7 @@
 				B37BF5922637E31E0046A168 /* ImageCacheManager.swift in Sources */,
 				B3D25402262D6AC900F57C61 /* AppDelegate.swift in Sources */,
 				B3D2540C262D6AC900F57C61 /* SideDish.xcdatamodeld in Sources */,
+				10459C24263937D60065A4D6 /* OrderInfoView.swift in Sources */,
 				104BDDD926315DF300F35BE7 /* EndPoint.swift in Sources */,
 				B3D25404262D6AC900F57C61 /* SceneDelegate.swift in Sources */,
 			);

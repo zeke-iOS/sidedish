@@ -12,7 +12,10 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var foodInformation: UIScrollView!
     @IBOutlet weak var thumbnailImages: UIScrollView!
+    @IBOutlet weak var foodContent: FoodContentView!
+    @IBOutlet weak var deliveryInfo: DeliveryInfoView!
     @IBOutlet weak var foodImages: UIStackView!
+    @IBOutlet weak var orderInfo: OrderInfoView!
     
     var card: Card?
     var detailManager: CardDetailManager = CardDetailManager()
@@ -29,9 +32,11 @@ class DetailViewController: UIViewController {
         detailManager.fetchDetail(id: card.id)
         detailManager.$cardDetail
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] cardDetail in
-                self?.fetchThumbnailImages(string: cardDetail?.thumbImage ?? [])
-                self?.fetchFoodImages(string: cardDetail?.detailSection ?? [])
+            .sink { [weak self] detail in
+                self?.fetchThumbnailImages(string: detail?.thumbImage ?? [])
+                self?.fetchFoodImages(string: detail?.detailSection ?? [])
+                self?.foodContent.setText(with: card)
+                self?.foodContent.setBadge(with: card.badge)
             }.store(in: &cancellables)
     }
     

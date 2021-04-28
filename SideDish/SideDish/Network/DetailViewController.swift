@@ -37,6 +37,7 @@ class DetailViewController: UIViewController {
                 self?.fetchFoodImages(string: detail?.detailSection ?? [])
                 self?.foodContent.setText(with: card)
                 self?.foodContent.setBadge(with: card.badge)
+                self?.bindFoodContent(with: detail)
             }.store(in: &cancellables)
     }
     
@@ -70,5 +71,11 @@ class DetailViewController: UIViewController {
     func configureNavigationBar() {
         self.navigationController?.navigationBar.isHidden = false
         navigationItem.title = card?.title
+    }
+    
+    func bindFoodContent(with detail: Published<CardDetail?>.Publisher.Output) {
+        self.deliveryInfo.point.text = detail?.point
+        self.deliveryInfo.address.text = detail?.deliveryInfo
+        self.deliveryInfo.deliveryFee.text = detail?.deliveryFee
     }
 }

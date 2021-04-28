@@ -16,6 +16,7 @@
 		104183A5262EB35A00280647 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 104183A4262EB35A00280647 /* Alamofire */; };
 		10459C1C26392C380065A4D6 /* DeliveryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */; };
 		10459C24263937D60065A4D6 /* OrderInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10459C23263937D60065A4D6 /* OrderInfoView.swift */; };
+		10459C31263956BF0065A4D6 /* OrderInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10459C30263956BF0065A4D6 /* OrderInfoComponent.swift */; };
 		104636772637E38100131B74 /* StackView+allremove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104636762637E38100131B74 /* StackView+allremove.swift */; };
 		104BDDD926315DF300F35BE7 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDDD826315DF300F35BE7 /* EndPoint.swift */; };
 		1050395B262DAAA000C8C0FB /* Toaster in Frameworks */ = {isa = PBXBuildFile; productRef = 1050395A262DAAA000C8C0FB /* Toaster */; };
@@ -70,6 +71,7 @@
 		1041839E262EB30800280647 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoView.swift; sourceTree = "<group>"; };
 		10459C23263937D60065A4D6 /* OrderInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoView.swift; sourceTree = "<group>"; };
+		10459C30263956BF0065A4D6 /* OrderInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoComponent.swift; sourceTree = "<group>"; };
 		104636762637E38100131B74 /* StackView+allremove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+allremove.swift"; sourceTree = "<group>"; };
 		104BDDD826315DF300F35BE7 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		10503967262DAB9300C8C0FB /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				100207942636F15400DFAE3C /* BadgeLabel.swift */,
 				10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */,
 				10459C23263937D60065A4D6 /* OrderInfoView.swift */,
+				10459C30263956BF0065A4D6 /* OrderInfoComponent.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				10418385262EA17300280647 /* Section.swift in Sources */,
 				B3EA763726329041004296DF /* CardDetail.swift in Sources */,
 				1083BDB52636A0C300B7C840 /* FoodContentView.swift in Sources */,
+				10459C31263956BF0065A4D6 /* OrderInfoComponent.swift in Sources */,
 				10B9F8A626311DF800B3130D /* CardAPI.swift in Sources */,
 				1041837D262E9F3B00280647 /* ImageView+load.swift in Sources */,
 				100207952636F15400DFAE3C /* BadgeLabel.swift in Sources */,

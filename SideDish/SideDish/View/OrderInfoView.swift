@@ -34,7 +34,7 @@ class OrderInfoView: UIView {
     private var mainStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.alignment = .trailing
+        stack.alignment = .fill
         stack.distribution = .fillProportionally
         return stack
     }()
@@ -50,7 +50,7 @@ class OrderInfoView: UIView {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.alignment = .fill
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
         stack.layer.borderWidth = 1
         stack.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         stack.widthAnchor.constraint(equalToConstant: 90).isActive = true
@@ -61,7 +61,8 @@ class OrderInfoView: UIView {
         stack.axis = .horizontal
         stack.spacing = 24
         stack.alignment = .center
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
+        stack.heightAnchor.constraint(equalToConstant: 94).isActive = true
         return stack
     }()
     private var buttonStack : UIStackView = {
@@ -95,6 +96,17 @@ class OrderInfoView: UIView {
         button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         button.setTitle("∨", for: .normal)
+        return button
+    }()
+    private var orderButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = #colorLiteral(red: 0.5095996261, green: 0.8290402293, blue: 0.1742436588, alpha: 1)
+        button.setTitle("주문하기", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 18)
+        button.layer.cornerRadius = 8
+        button.heightAnchor.constraint(equalToConstant: 58).isActive = true
         return button
     }()
     override func draw(_ rect: CGRect) {
@@ -131,6 +143,7 @@ class OrderInfoView: UIView {
         
         mainStack.addArrangedSubview(amountStack)
         mainStack.addArrangedSubview(totalStack)
+        mainStack.addArrangedSubview(orderButton)
         
         self.addSubview(mainStack)
         

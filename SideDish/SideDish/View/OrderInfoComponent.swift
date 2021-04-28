@@ -8,22 +8,22 @@
 import UIKit
 
 struct OrderInfoComponent {
-    static var up : UIButton = {
-        let button = UIButton()
-        button.layer.borderWidth = 0.5
-        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
-        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-        button.setTitle("∧", for: .normal)
-        return button
-    }()
-    static var down : UIButton = {
-        let button = UIButton()
-        button.layer.borderWidth = 0.5
-        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
-        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-        button.setTitle("∨", for: .normal)
-        return button
-    }()
+//    static var up : UIButton = {
+//        let button = UIButton()
+//        button.layer.borderWidth = 0.5
+//        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
+//        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+//        button.setTitle("∧", for: .normal)
+//        return button
+//    }()
+//    static var down : UIButton = {
+//        let button = UIButton()
+//        button.layer.borderWidth = 0.5
+//        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
+//        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+//        button.setTitle("∨", for: .normal)
+//        return button
+//    }()
     static var amountLabel : UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 20))
         label.text = "수량"
@@ -50,15 +50,15 @@ struct OrderInfoComponent {
         button.heightAnchor.constraint(equalToConstant: 58).isActive = true
         return button
     }()
-    var innerButtonStack : UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.alignment = .fill
-        stack.distribution = .fillEqually
-        stack.layer.borderWidth = 1
-        stack.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
-        stack.addArrangedSubview(OrderInfoComponent.up)
-        stack.addArrangedSubview(OrderInfoComponent.down)
-        return stack
-    }()
+//    var innerButtonStack : UIStackView = {
+//        let stack = UIStackView()
+//        stack.axis = .vertical
+//        stack.alignment = .fill
+//        stack.distribution = .fillEqually
+//        stack.layer.borderWidth = 1
+//        stack.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
+//        stack.addArrangedSubview(OrderInfoComponent.up)
+//        stack.addArrangedSubview(OrderInfoComponent.down)
+//        return stack
+//    }()
 }

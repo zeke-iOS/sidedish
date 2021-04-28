@@ -26,6 +26,22 @@ class OrderInfoView: UIView {
         label.font = UIFont(name: "NotoSansKR-Regular", size: 16)
         return label
     }()
+    var upButton : UIButton = {
+        let button = UIButton()
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
+        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        button.setTitle("∧", for: .normal)
+        return button
+    }()
+    var downButton : UIButton = {
+        let button = UIButton()
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
+        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        button.setTitle("∨", for: .normal)
+        return button
+    }()
     private var mainStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -44,6 +60,15 @@ class OrderInfoView: UIView {
     private var amountInnerStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
+        stack.layer.borderWidth = 1
+        stack.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
+        return stack
+    }()
+    var innerButtonStack : UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
         stack.alignment = .fill
         stack.distribution = .fillEqually
         stack.layer.borderWidth = 1
@@ -84,7 +109,10 @@ class OrderInfoView: UIView {
         amountStack.addArrangedSubview(amountInnerStack)
         
         amountInnerStack.addArrangedSubview(amount)
-        amountInnerStack.addArrangedSubview(OrderInfoComponent().innerButtonStack)
+        amountInnerStack.addArrangedSubview(innerButtonStack)
+
+        innerButtonStack.addArrangedSubview(upButton)
+        innerButtonStack.addArrangedSubview(downButton)
         
         totalStack.addArrangedSubview(OrderInfoComponent.totalLabel)
         totalStack.addArrangedSubview(total)

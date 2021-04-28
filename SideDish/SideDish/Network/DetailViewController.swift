@@ -78,4 +78,5 @@ class DetailViewController: UIViewController {
         self.deliveryInfo.address.text = detail?.deliveryInfo
         self.deliveryInfo.deliveryFee.text = detail?.deliveryFee
     }
+
 }

@@ -7,7 +7,7 @@
 import UIKit
 
 struct BadgeLabel {
-    static let eventBadge : UILabel = {
+    var eventBadge : UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         label.font = UIFont(name: "NotoSansKR-Bold", size: 12)
@@ -20,7 +20,7 @@ struct BadgeLabel {
         label.heightAnchor.constraint(equalToConstant: 25).isActive = true
         return label
     }()
-    static let lunchingBadge : UILabel = {
+    var lunchingBadge : UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         label.font = UIFont(name: "NotoSansKR-Bold", size: 12)

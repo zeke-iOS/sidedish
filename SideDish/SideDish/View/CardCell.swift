@@ -20,6 +20,7 @@ class CardCell: UICollectionViewCell {
                 self.activityIndicator.stopAnimating()
             })
             foodContent.setText(with: card)
+            foodContent.setBadge(with: card?.badge)
         }
     }
     override func awakeFromNib() {
@@ -30,9 +31,5 @@ class CardCell: UICollectionViewCell {
     }
     func configureThumbnail(){
         self.thumbnail.layer.cornerRadius = 5
-    }
-    
-    override func prepareForReuse() {
-        <#code#>
     }
 }

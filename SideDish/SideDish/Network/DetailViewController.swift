@@ -29,6 +29,7 @@ class DetailViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] detail in
                 self?.foodContentView.setText(with: card)
+                self?.foodContentView.setBadge(with: card.badge)
             }.store(in: &cancellables)
     }
 }

@@ -26,7 +26,7 @@ class OrderInfoView: UIView {
         label.font = UIFont(name: "NotoSansKR-Regular", size: 16)
         return label
     }()
-    var upButton : UIButton = {
+    var up : UIButton = {
         let button = UIButton()
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
@@ -34,7 +34,7 @@ class OrderInfoView: UIView {
         button.setTitle("∧", for: .normal)
         return button
     }()
-    var downButton : UIButton = {
+    var down : UIButton = {
         let button = UIButton()
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
@@ -111,8 +111,8 @@ class OrderInfoView: UIView {
         amountInnerStack.addArrangedSubview(amount)
         amountInnerStack.addArrangedSubview(innerButtonStack)
 
-        innerButtonStack.addArrangedSubview(upButton)
-        innerButtonStack.addArrangedSubview(downButton)
+        innerButtonStack.addArrangedSubview(up)
+        innerButtonStack.addArrangedSubview(down)
         
         totalStack.addArrangedSubview(OrderInfoComponent.totalLabel)
         totalStack.addArrangedSubview(total)

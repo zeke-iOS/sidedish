@@ -24,6 +24,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
+        orderInfo.up.addTarget(self, action: #selector(onTapButtonWithUp), for: .touchUpInside)
+        orderInfo.down.addTarget(self, action: #selector(onTapButtonWithDown), for: .touchUpInside)
         guard let card = card else { return }
         bind(card: card)
     }
@@ -78,5 +80,19 @@ class DetailViewController: UIViewController {
         self.deliveryInfo.address.text = detail?.deliveryInfo
         self.deliveryInfo.deliveryFee.text = detail?.deliveryFee
     }
-
+    
+    @objc
+    func onTapButtonWithUp() {
+        orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! + 1)"
+    }
+    
+    @objc
+    func onTapButtonWithDown() {
+        if Int(orderInfo.amount.text!)! == 0 {
+            return
+        } else {
+            orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! - 1)"
+        }
+        
+    }
 }

@@ -14,6 +14,8 @@
 		10418397262EB1B700280647 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10418396262EB1B700280647 /* Response.swift */; };
 		1041839F262EB30800280647 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041839E262EB30800280647 /* API.swift */; };
 		104183A5262EB35A00280647 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 104183A4262EB35A00280647 /* Alamofire */; };
+		10459C1C26392C380065A4D6 /* DeliveryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */; };
+		10459C24263937D60065A4D6 /* OrderInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10459C23263937D60065A4D6 /* OrderInfoView.swift */; };
 		104636772637E38100131B74 /* StackView+allremove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104636762637E38100131B74 /* StackView+allremove.swift */; };
 		104BDDD926315DF300F35BE7 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104BDDD826315DF300F35BE7 /* EndPoint.swift */; };
 		1050395B262DAAA000C8C0FB /* Toaster in Frameworks */ = {isa = PBXBuildFile; productRef = 1050395A262DAAA000C8C0FB /* Toaster */; };
@@ -66,6 +68,8 @@
 		10418384262EA17300280647 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		10418396262EB1B700280647 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		1041839E262EB30800280647 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoView.swift; sourceTree = "<group>"; };
+		10459C23263937D60065A4D6 /* OrderInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoView.swift; sourceTree = "<group>"; };
 		104636762637E38100131B74 /* StackView+allremove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView+allremove.swift"; sourceTree = "<group>"; };
 		104BDDD826315DF300F35BE7 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		10503967262DAB9300C8C0FB /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 				10503967262DAB9300C8C0FB /* SectionHeaderReusableView.swift */,
 				1083BDB42636A0C300B7C840 /* FoodContentView.swift */,
 				100207942636F15400DFAE3C /* BadgeLabel.swift */,
+				10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */,
+				10459C23263937D60065A4D6 /* OrderInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				105467172631101600DAB4E3 /* LoadError.swift in Sources */,
+				10459C1C26392C380065A4D6 /* DeliveryInfoView.swift in Sources */,
 				1041839F262EB30800280647 /* API.swift in Sources */,
 				10418385262EA17300280647 /* Section.swift in Sources */,
 				B3EA763726329041004296DF /* CardDetail.swift in Sources */,
@@ -418,6 +425,7 @@
 				B3D25406262D6AC900F57C61 /* ViewController.swift in Sources */,
 				B3D25402262D6AC900F57C61 /* AppDelegate.swift in Sources */,
 				B3D2540C262D6AC900F57C61 /* SideDish.xcdatamodeld in Sources */,
+				10459C24263937D60065A4D6 /* OrderInfoView.swift in Sources */,
 				104BDDD926315DF300F35BE7 /* EndPoint.swift in Sources */,
 				B3D25404262D6AC900F57C61 /* SceneDelegate.swift in Sources */,
 			);

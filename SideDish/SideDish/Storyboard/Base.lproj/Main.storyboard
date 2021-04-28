@@ -123,15 +123,35 @@
                                                     <constraint firstAttribute="height" constant="150" id="OrY-kD-sz4"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhF-wR-KK5" customClass="DeliveryInfoView" customModule="SideDish" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="592" width="382" height="180"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="Tk7-Rf-CRT"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nHB-bg-KhN" customClass="OrderInfoView" customModule="SideDish" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="772" width="382" height="242"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="242" id="qZy-sp-gAU"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="s3M-rS-az9" firstAttribute="leading" secondItem="zjV-A6-A1J" secondAttribute="leading" constant="16" id="0RC-Dm-oPE"/>
                                             <constraint firstItem="dhg-4t-tZP" firstAttribute="top" secondItem="zjV-A6-A1J" secondAttribute="top" id="5sO-pW-Npd"/>
+                                            <constraint firstAttribute="trailing" secondItem="OhF-wR-KK5" secondAttribute="trailing" constant="16" id="DgZ-sA-tJl"/>
+                                            <constraint firstItem="nHB-bg-KhN" firstAttribute="top" secondItem="OhF-wR-KK5" secondAttribute="bottom" id="IMw-Ui-xlF"/>
                                             <constraint firstItem="s3M-rS-az9" firstAttribute="top" secondItem="dhg-4t-tZP" secondAttribute="bottom" id="PCA-up-Dhf"/>
+                                            <constraint firstItem="nHB-bg-KhN" firstAttribute="leading" secondItem="zjV-A6-A1J" secondAttribute="leading" constant="16" id="RO0-Ad-nK5"/>
+                                            <constraint firstItem="OhF-wR-KK5" firstAttribute="top" secondItem="s3M-rS-az9" secondAttribute="bottom" constant="28" id="bPd-dy-9iY"/>
                                             <constraint firstAttribute="height" constant="2000" id="cr8-4Q-44r"/>
+                                            <constraint firstAttribute="trailing" secondItem="nHB-bg-KhN" secondAttribute="trailing" constant="16" id="czc-oq-lBU"/>
                                             <constraint firstAttribute="trailing" secondItem="s3M-rS-az9" secondAttribute="trailing" constant="16" id="dte-1T-giw"/>
                                             <constraint firstItem="dhg-4t-tZP" firstAttribute="leading" secondItem="zjV-A6-A1J" secondAttribute="leading" id="iX5-2Q-0wq"/>
+                                            <constraint firstItem="OhF-wR-KK5" firstAttribute="leading" secondItem="zjV-A6-A1J" secondAttribute="leading" constant="16" id="kh4-2k-i1I"/>
                                             <constraint firstAttribute="trailing" secondItem="dhg-4t-tZP" secondAttribute="trailing" id="yDa-GY-gnh"/>
                                         </constraints>
                                     </view>

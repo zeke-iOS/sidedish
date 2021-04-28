@@ -40,6 +40,7 @@ class DetailViewController: UIViewController {
                 self?.foodContent.setText(with: card)
                 self?.foodContent.setBadge(with: card.badge)
                 self?.bindFoodContent(with: detail)
+                self?.orderInfo.total.text = card.discountPrice
             }.store(in: &cancellables)
     }
     
@@ -65,8 +66,6 @@ class DetailViewController: UIViewController {
             imageView.contentMode = .scaleAspectFit
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1).isActive = true
             self.foodImages.addArrangedSubview(imageView)
-            foodInformation.contentSize.height = thumbnailImages.frame.height + (imageView.frame.width * CGFloat(index+1))
-            
         }
     }
     
@@ -83,15 +82,19 @@ class DetailViewController: UIViewController {
     
     @objc
     func onTapButtonWithUp() {
+        let totalPrice = card?.discountPrice?.filter{ $0.isNumber }
         orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! + 1)"
+        orderInfo.total.text = "\(Int(totalPrice!)! * Int(orderInfo.amount.text!)!)원"
     }
     
     @objc
     func onTapButtonWithDown() {
+        let totalPrice = card?.discountPrice?.filter{ $0.isNumber }
         if Int(orderInfo.amount.text!)! == 0 {
             return
         } else {
             orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! - 1)"
+            orderInfo.total.text = "\(Int(totalPrice!)! * Int(orderInfo.amount.text!)!)원"
         }
         
     }

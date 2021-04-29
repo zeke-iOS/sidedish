@@ -17,6 +17,8 @@ class LoginViewController: UIViewController, ASWebAuthenticationPresentationCont
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
+        self.view.backgroundColor = .systemBackground
     }
     
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {

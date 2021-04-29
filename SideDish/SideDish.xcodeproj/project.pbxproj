@@ -45,6 +45,7 @@
 		B3EA762C26327634004296DF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EA762B26327634004296DF /* DetailViewController.swift */; };
 		B3EA763726329041004296DF /* CardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EA763626329041004296DF /* CardDetail.swift */; };
 		B3EA763F2632996E004296DF /* CardDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EA763E2632996E004296DF /* CardDetailManager.swift */; };
+		B3F64165263A98E9004084C2 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F64164263A98E9004084C2 /* LaunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		B3EA762B26327634004296DF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = SideDish/Network/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		B3EA763626329041004296DF /* CardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetail.swift; sourceTree = "<group>"; };
 		B3EA763E2632996E004296DF /* CardDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailManager.swift; sourceTree = "<group>"; };
+		B3F64164263A98E9004084C2 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 		B3D25441262D6F0300F57C61 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B3F64164263A98E9004084C2 /* LaunchViewController.swift */,
 				B31E5EBC262E7551002046CC /* LoginViewController.swift */,
 				B3D25405262D6AC900F57C61 /* ViewController.swift */,
 				B3EA762B26327634004296DF /* DetailViewController.swift */,
@@ -439,6 +442,7 @@
 				B3D2540C262D6AC900F57C61 /* SideDish.xcdatamodeld in Sources */,
 				10459C24263937D60065A4D6 /* OrderInfoView.swift in Sources */,
 				104BDDD926315DF300F35BE7 /* EndPoint.swift in Sources */,
+				B3F64165263A98E9004084C2 /* LaunchViewController.swift in Sources */,
 				B3D25404262D6AC900F57C61 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

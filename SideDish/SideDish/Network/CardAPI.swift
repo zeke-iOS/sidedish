@@ -25,3 +25,4 @@ class DetailAPI {
         return API().run(request).map(\.value).eraseToAnyPublisher()
     }
 }
+

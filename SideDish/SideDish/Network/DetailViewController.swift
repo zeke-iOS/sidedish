@@ -62,10 +62,14 @@ class DetailViewController: UIViewController {
             let url = URL(string: string)
             let imageView = UIImageView()
             
-            imageView.load(url: url){}
-            
+            imageView.load(url: url){
+                guard let image = imageView.image else { return }
+                let ratio = image.size.height / image.size.width
+                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: ratio).isActive = true
+            }
+
             imageView.contentMode = .scaleAspectFit
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1).isActive = true
+            
             self.foodImages.addArrangedSubview(imageView)
         }
     }

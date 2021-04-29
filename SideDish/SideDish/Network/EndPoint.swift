@@ -13,6 +13,7 @@ enum EndPoint : String, CodingKey {
     case side
     
     static let baseURL = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/"
+    static let postURL = "https://hooks.slack.com/services/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"
     var path : String { self.stringValue }
     var url : URL { URL(string: EndPoint.baseURL + path)! }
     static func detailURL(id: String) -> URL? {

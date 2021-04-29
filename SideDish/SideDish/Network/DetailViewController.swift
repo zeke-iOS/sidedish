@@ -89,7 +89,9 @@ class DetailViewController: UIViewController {
     func increase() {
         let totalPrice = card?.discountPrice?.filter{ $0.isNumber }
         orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! + 1)"
-        orderInfo.total.text = "\(Int(totalPrice!)! * Int(orderInfo.amount.text!)!)원"
+        let price = Int32(totalPrice!)! * Int32(orderInfo.amount.text!)!
+        let decimalTotalPrice = addDecimal(value: price)
+        orderInfo.total.text = decimalTotalPrice
         
     }
     
@@ -100,7 +102,9 @@ class DetailViewController: UIViewController {
             return
         } else {
             orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! - 1)"
-            orderInfo.total.text = "\(Int(totalPrice!)! * Int(orderInfo.amount.text!)!)원"
+            let price = Int32(totalPrice!)! * Int32(orderInfo.amount.text!)!
+            let decimalTotalPrice = addDecimal(value: price)
+            orderInfo.total.text = decimalTotalPrice
         }
     }
     
@@ -112,5 +116,12 @@ class DetailViewController: UIViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func addDecimal(value: Int32) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: value))! + "원"
+        return result
     }
 }

@@ -90,6 +90,7 @@ class DetailViewController: UIViewController {
         let totalPrice = card?.discountPrice?.filter{ $0.isNumber }
         orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! + 1)"
         orderInfo.total.text = "\(Int(totalPrice!)! * Int(orderInfo.amount.text!)!)원"
+        
     }
     
     @objc
@@ -105,6 +106,11 @@ class DetailViewController: UIViewController {
     
     @objc
     func order() {
-        
+        let alert = UIAlertController(title: "주문 완료", message: "주문이 성공적으로 완료되었습니다.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
 }

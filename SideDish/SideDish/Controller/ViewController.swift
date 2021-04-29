@@ -29,7 +29,6 @@ class ViewController: UIViewController {
         fetchData()
         makeSectionHeader()
         cardCollectionView.delegate = self
-//        cardCollectionView.allowsSelection = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

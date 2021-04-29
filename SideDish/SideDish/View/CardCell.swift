@@ -18,6 +18,7 @@ class CardCell: UICollectionViewCell {
         didSet {
             thumbnail.load(url: card?.imageURL, completion: {
                 self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
             })
             foodContent.setText(with: card)
             foodContent.setBadge(with: card?.badge)

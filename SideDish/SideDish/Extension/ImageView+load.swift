@@ -15,6 +15,7 @@ extension UIImageView {
             if let cacheImage = ImageCacheManager.shared.object(forKey: cacheKey) {
                 DispatchQueue.main.async {
                     self?.image = cacheImage
+                    completion()
                 }
                 return
             }

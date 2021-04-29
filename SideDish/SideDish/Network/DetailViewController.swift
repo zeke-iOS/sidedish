@@ -95,7 +95,7 @@ class DetailViewController: UIViewController {
     @objc
     func reduce() {
         let totalPrice = card?.discountPrice?.filter{ $0.isNumber }
-        if Int(orderInfo.amount.text!)! == 0 {
+        if Int(orderInfo.amount.text!)! == 1 {
             return
         } else {
             orderInfo.amount.text = "\(Int(orderInfo.amount.text!)! - 1)"

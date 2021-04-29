@@ -29,8 +29,11 @@ class ViewController: UIViewController {
         fetchData()
         makeSectionHeader()
         cardCollectionView.delegate = self
-        self.navigationController?.navigationBar.isHidden = true
 //        cardCollectionView.allowsSelection = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
 }
 

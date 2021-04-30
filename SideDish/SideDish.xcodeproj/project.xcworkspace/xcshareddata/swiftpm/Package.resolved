@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "f96b619bcb2383b43d898402283924b80e2c4bae",
+          "version": "5.4.3"
+        }
+      },
+      {
+        "package": "OctoKit",
+        "repositoryURL": "https://github.com/nerdishbynature/octokit.swift",
+        "state": {
+          "branch": null,
+          "revision": "9521cdff919053868ab13cd08a228f7bc1bde2a9",
+          "version": "0.11.0"
+        }
+      },
+      {
+        "package": "RequestKit",
+        "repositoryURL": "https://github.com/nerdishbynature/RequestKit.git",
+        "state": {
+          "branch": null,
+          "revision": "fd5e9e99aada7432170366c9e95967011ce13bad",
+          "version": "2.4.0"
+        }
+      },
+      {
+        "package": "Toaster",
+        "repositoryURL": "https://github.com/devxoul/Toaster.git",
+        "state": {
+          "branch": "master",
+          "revision": "b4fa1aa8d9231ea62dac5c3255f4313d727d22a4",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

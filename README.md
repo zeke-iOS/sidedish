@@ -2,8 +2,7 @@
 
 
 
-## EZ 모바일라이프
-
+## <img width="80" alt="Screen Shot 2021-04-30 at 3 54 15 PM" src="https://user-images.githubusercontent.com/60229909/116659278-52a68780-a9cc-11eb-9ce0-dc1a958a0330.png">EZ 모바일라이프 
 
 
 ### 💡 팀원 소개

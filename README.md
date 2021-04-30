@@ -6,13 +6,13 @@
 
 
 
-### 🏆팀원 소개
+### 💡 팀원 소개
 
 Elly👻, Zeke:otter:
 
 
 
-### 🧾 진행 방식
+### 💡 진행 방식
 - [브랜치 규칙 및 네이밍 컨벤션](https://github.com/zeke-iOS/sidedish/wiki)
 - [마일스톤](https://github.com/zeke-iOS/sidedish/milestones)에 요구사항 정리
 - [Issue 관리](https://github.com/zeke-iOS/sidedish/issues?q=is%3Aissue+is%3Aclosed)

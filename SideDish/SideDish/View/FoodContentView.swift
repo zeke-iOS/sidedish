@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable
 class FoodContentView: UIView {
 
-    private var mainStack : UIStackView = {
+    var mainStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 8
@@ -48,7 +48,7 @@ class FoodContentView: UIView {
         label.font = UIFont(name: "NotoSansKR-Bold", size: 14)
         return label
     }()
-    private var priceStack : UIStackView = {
+    var priceStack : UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.spacing = 4
@@ -99,7 +99,7 @@ class FoodContentView: UIView {
         }
         mainStack.addArrangedSubview(badgeStack)
     }
-    private func configureMainStackView(){
+    func configureMainStackView(){
         self.addSubview(mainStack)
         mainStack.translatesAutoresizingMaskIntoConstraints = false
 
@@ -108,7 +108,7 @@ class FoodContentView: UIView {
         mainStack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
         mainStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
-    private func configureView(){
+    func configureView(){
         configureMainStackView()
         
         mainStack.addArrangedSubview(title)

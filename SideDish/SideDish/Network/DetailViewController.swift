@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var foodInformation: UIScrollView!
     @IBOutlet weak var thumbnailImages: UIScrollView!
-    @IBOutlet weak var foodContent: FoodContentView!
+    @IBOutlet weak var foodContent: DetailFoodContentView!
     @IBOutlet weak var deliveryInfo: DeliveryInfoView!
     @IBOutlet weak var foodImages: UIStackView!
     @IBOutlet weak var orderInfo: OrderInfoView!

@@ -92,7 +92,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjV-A6-A1J">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1244"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhg-4t-tZP">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -116,29 +116,29 @@
                                                 <viewLayoutGuide key="contentLayoutGuide" id="3xW-UX-xVB"/>
                                                 <viewLayoutGuide key="frameLayoutGuide" id="OHK-rX-Rlp"/>
                                             </scrollView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81A-zd-NOW" customClass="FoodContentView" customModule="SideDish" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="414" width="382" height="150"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81A-zd-NOW" customClass="DetailFoodContentView" customModule="SideDish" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="438" width="382" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="95w-lZ-0D0"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8D4-o3-6TT" customClass="DeliveryInfoView" customModule="SideDish" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="592" width="382" height="180"/>
+                                                <rect key="frame" x="16" y="612" width="382" height="180"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="QgN-ON-QsI"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTx-i3-TbQ" customClass="OrderInfoView" customModule="SideDish" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="772" width="382" height="242"/>
+                                                <rect key="frame" x="16" y="792" width="382" height="242"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="242" id="dp2-hQ-s29"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="top" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="200" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="6fr-q9-sMl">
-                                                <rect key="frame" x="16" y="1014" width="382" height="200"/>
+                                                <rect key="frame" x="16" y="1034" width="382" height="200"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -153,11 +153,11 @@
                                             <constraint firstAttribute="trailing" secondItem="8D4-o3-6TT" secondAttribute="trailing" constant="16" id="T6j-80-haB"/>
                                             <constraint firstItem="6fr-q9-sMl" firstAttribute="top" secondItem="qTx-i3-TbQ" secondAttribute="bottom" id="UAY-54-2C0"/>
                                             <constraint firstItem="dhg-4t-tZP" firstAttribute="leading" secondItem="zjV-A6-A1J" secondAttribute="leading" id="VW4-6y-XHa"/>
-                                            <constraint firstItem="8D4-o3-6TT" firstAttribute="top" secondItem="81A-zd-NOW" secondAttribute="bottom" constant="28" id="Whz-jf-TJE"/>
+                                            <constraint firstItem="8D4-o3-6TT" firstAttribute="top" secondItem="81A-zd-NOW" secondAttribute="bottom" constant="24" id="Whz-jf-TJE"/>
                                             <constraint firstItem="81A-zd-NOW" firstAttribute="leading" secondItem="zjV-A6-A1J" secondAttribute="leading" constant="16" id="erq-b6-333"/>
                                             <constraint firstItem="qTx-i3-TbQ" firstAttribute="leading" secondItem="zjV-A6-A1J" secondAttribute="leading" constant="16" id="exu-sL-XWi"/>
                                             <constraint firstAttribute="trailing" secondItem="6fr-q9-sMl" secondAttribute="trailing" constant="16" id="kep-9D-6Xr"/>
-                                            <constraint firstItem="81A-zd-NOW" firstAttribute="top" secondItem="dhg-4t-tZP" secondAttribute="bottom" id="pNc-Hs-FT8"/>
+                                            <constraint firstItem="81A-zd-NOW" firstAttribute="top" secondItem="dhg-4t-tZP" secondAttribute="bottom" constant="24" id="pNc-Hs-FT8"/>
                                             <constraint firstAttribute="trailing" secondItem="81A-zd-NOW" secondAttribute="trailing" constant="16" id="x4e-w0-EnA"/>
                                         </constraints>
                                     </view>
@@ -185,7 +185,7 @@
                     <navigationItem key="navigationItem" id="QJk-y3-d5E"/>
                     <connections>
                         <outlet property="deliveryInfo" destination="8D4-o3-6TT" id="Tdk-VE-v8M"/>
-                        <outlet property="foodContent" destination="81A-zd-NOW" id="CEN-l5-iZY"/>
+                        <outlet property="foodContent" destination="81A-zd-NOW" id="e8N-94-6SS"/>
                         <outlet property="foodImages" destination="6fr-q9-sMl" id="mE8-iK-iii"/>
                         <outlet property="foodInformation" destination="04h-MC-gzG" id="fxi-2o-b9f"/>
                         <outlet property="orderInfo" destination="qTx-i3-TbQ" id="zn7-k8-fds"/>

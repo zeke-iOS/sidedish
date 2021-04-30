@@ -30,6 +30,7 @@
 		B31E5EBD262E7551002046CC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E5EBC262E7551002046CC /* LoginViewController.swift */; };
 		B31E5EC3262E7E18002046CC /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = B31E5EC2262E7E18002046CC /* OctoKit */; };
 		B37BF5922637E31E0046A168 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BF5912637E31E0046A168 /* ImageCacheManager.swift */; };
+		B38CD304263BB47D00173D38 /* DetailFoodContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38CD303263BB47D00173D38 /* DetailFoodContentView.swift */; };
 		B3A45A212639C00600D0907E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A45A202639C00600D0907E /* Order.swift */; };
 		B3D25402262D6AC900F57C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D25401262D6AC900F57C61 /* AppDelegate.swift */; };
 		B3D25404262D6AC900F57C61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D25403262D6AC900F57C61 /* SceneDelegate.swift */; };
@@ -86,6 +87,7 @@
 		10B9F8A526311DF800B3130D /* CardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPI.swift; sourceTree = "<group>"; };
 		B31E5EBC262E7551002046CC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B37BF5912637E31E0046A168 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCacheManager.swift; path = SideDish/View/ImageCacheManager.swift; sourceTree = SOURCE_ROOT; };
+		B38CD303263BB47D00173D38 /* DetailFoodContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodContentView.swift; sourceTree = "<group>"; };
 		B3A45A202639C00600D0907E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Order.swift; path = SideDish/Network/Order.swift; sourceTree = SOURCE_ROOT; };
 		B3D253FE262D6AC900F57C61 /* SideDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D25401262D6AC900F57C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				B3D25438262D6ECA00F57C61 /* CardCell.xib */,
 				10503967262DAB9300C8C0FB /* SectionHeaderReusableView.swift */,
 				1083BDB42636A0C300B7C840 /* FoodContentView.swift */,
+				B38CD303263BB47D00173D38 /* DetailFoodContentView.swift */,
 				100207942636F15400DFAE3C /* BadgeLabel.swift */,
 				10459C1B26392C380065A4D6 /* DeliveryInfoView.swift */,
 				10459C23263937D60065A4D6 /* OrderInfoView.swift */,
@@ -424,6 +427,7 @@
 				B3EA763726329041004296DF /* CardDetail.swift in Sources */,
 				1083BDB52636A0C300B7C840 /* FoodContentView.swift in Sources */,
 				10459C31263956BF0065A4D6 /* OrderInfoComponent.swift in Sources */,
+				B38CD304263BB47D00173D38 /* DetailFoodContentView.swift in Sources */,
 				10B9F8A626311DF800B3130D /* CardAPI.swift in Sources */,
 				1041837D262E9F3B00280647 /* ImageView+load.swift in Sources */,
 				100207952636F15400DFAE3C /* BadgeLabel.swift in Sources */,
